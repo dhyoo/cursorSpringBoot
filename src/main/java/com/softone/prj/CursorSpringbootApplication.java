@@ -1,0 +1,13 @@
+package com.softone.prj;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CursorSpringbootApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CursorSpringbootApplication.class, args);
+	}
+
+}

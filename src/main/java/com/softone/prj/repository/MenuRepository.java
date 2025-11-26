@@ -1,0 +1,16 @@
+package com.softone.prj.repository;
+
+import com.softone.prj.entity.Menu;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface MenuRepository extends JpaRepository<Menu, String> {
+    List<Menu> findByParentMenuIdIsNull();
+    List<Menu> findByParentMenuId(String parentMenuId);
+    Optional<Menu> findByMenuId(String menuId);
+}
+

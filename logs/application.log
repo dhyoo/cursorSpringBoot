@@ -42,3 +42,129 @@ Action:
 
 Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
 
+2025-11-06 15:55:32.803 [main] INFO  c.s.prj.CursorSpringbootApplication - Starting CursorSpringbootApplication using Java 21.0.7 with PID 15256 (C:\project\cursorSpringBoot\build\classes\java\main started by ydh10 in C:\project\cursorSpringBoot)
+2025-11-06 15:55:32.805 [main] INFO  c.s.prj.CursorSpringbootApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-06 15:55:33.407 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-06 15:55:33.457 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2025-11-06 15:55:33.882 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-11-06 15:55:33.893 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-06 15:55:33.894 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-11-06 15:55:33.946 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-06 15:55:33.947 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1113 ms
+2025-11-06 15:55:33.969 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-06 15:55:34.127 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-11-06 15:55:34.128 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-06 15:55:34.136 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-11-06 15:55:34.239 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-06 15:55:34.277 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-11-06 15:55:34.301 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-06 15:55:34.472 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-06 15:55:34.505 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-06 15:55:35.214 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-06 15:55:35.281 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-06 15:55:35.638 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-06 15:55:35.816 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c9af700, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29897daf, org.springframework.security.web.context.SecurityContextHolderFilter@38e100ab, org.springframework.security.web.header.HeaderWriterFilter@73bb782d, org.springframework.web.filter.CorsFilter@1b46392c, org.springframework.security.web.csrf.CsrfFilter@4f93303f, org.springframework.security.web.authentication.logout.LogoutFilter@6d7005e2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@318f47f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@900ffc4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63e54c66, org.springframework.security.web.access.ExceptionTranslationFilter@63075ad1, org.springframework.security.web.access.intercept.AuthorizationFilter@7c1f3125]
+2025-11-06 15:55:36.025 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-11-06 15:55:36.030 [main] INFO  c.s.prj.CursorSpringbootApplication - Started CursorSpringbootApplication in 3.66 seconds (process running for 3.927)
+2025-11-06 15:55:36.241 [main] INFO  c.softone.prj.config.DataInitializer - 샘플 데이터 초기화를 시작합니다...
+2025-11-06 15:55:36.268 [main] INFO  c.softone.prj.config.DataInitializer - 6개의 역할이 생성되었습니다.
+2025-11-06 15:55:36.273 [main] INFO  c.softone.prj.config.DataInitializer - 12명의 사용자가 생성되었습니다.
+2025-11-06 15:55:36.295 [main] INFO  c.softone.prj.config.DataInitializer - 7개의 메뉴가 생성되었습니다.
+2025-11-06 15:55:36.305 [main] INFO  c.softone.prj.config.DataInitializer - 13개의 게시글이 생성되었습니다.
+2025-11-06 15:55:36.307 [main] INFO  c.softone.prj.config.DataInitializer - 8개의 활동 로그가 생성되었습니다.
+2025-11-06 15:55:36.307 [main] INFO  c.softone.prj.config.DataInitializer - 샘플 데이터 초기화가 완료되었습니다.
+2025-11-06 16:03:36.337 [main] INFO  c.s.prj.CursorSpringbootApplication - Starting CursorSpringbootApplication using Java 21.0.7 with PID 31932 (C:\project\cursorSpringBoot\build\classes\java\main started by ydh10 in C:\project\cursorSpringBoot)
+2025-11-06 16:03:36.339 [main] INFO  c.s.prj.CursorSpringbootApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-06 16:03:37.049 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-06 16:03:37.104 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2025-11-06 16:03:37.560 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-11-06 16:03:37.577 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-06 16:03:37.577 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-11-06 16:03:37.640 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-06 16:03:37.641 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1265 ms
+2025-11-06 16:03:37.665 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-06 16:03:37.845 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-11-06 16:03:37.847 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-06 16:03:37.856 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-11-06 16:03:37.978 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-06 16:03:38.026 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-11-06 16:03:38.064 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-06 16:03:38.271 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-06 16:03:38.316 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-06 16:03:39.323 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-06 16:03:39.406 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-06 16:03:39.873 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-06 16:03:40.126 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@22b2d9e3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43600de0, org.springframework.security.web.context.SecurityContextHolderFilter@1ec96512, org.springframework.security.web.header.HeaderWriterFilter@5b5f06bb, org.springframework.web.filter.CorsFilter@70fede7d, org.springframework.security.web.csrf.CsrfFilter@510d4d4b, org.springframework.security.web.authentication.logout.LogoutFilter@69eb1f23, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@665574fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3eb7ff78, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d028c7e, org.springframework.security.web.access.ExceptionTranslationFilter@770be0d0, org.springframework.security.web.access.intercept.AuthorizationFilter@33aa4326]
+2025-11-06 16:03:40.397 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-11-06 16:03:40.403 [main] INFO  c.s.prj.CursorSpringbootApplication - Started CursorSpringbootApplication in 4.587 seconds (process running for 4.92)
+2025-11-06 16:03:40.691 [main] INFO  c.softone.prj.config.DataInitializer - 샘플 데이터 초기화를 시작합니다...
+2025-11-06 16:03:40.732 [main] INFO  c.softone.prj.config.DataInitializer - 6개의 역할이 생성되었습니다.
+2025-11-06 16:03:40.740 [main] INFO  c.softone.prj.config.DataInitializer - 12명의 사용자가 생성되었습니다.
+2025-11-06 16:03:40.774 [main] INFO  c.softone.prj.config.DataInitializer - 7개의 메뉴가 생성되었습니다.
+2025-11-06 16:03:40.787 [main] INFO  c.softone.prj.config.DataInitializer - 13개의 게시글이 생성되었습니다.
+2025-11-06 16:03:40.792 [main] INFO  c.softone.prj.config.DataInitializer - 8개의 활동 로그가 생성되었습니다.
+2025-11-06 16:03:40.792 [main] INFO  c.softone.prj.config.DataInitializer - 샘플 데이터 초기화가 완료되었습니다.
+2025-11-06 16:09:49.968 [main] INFO  c.s.prj.CursorSpringbootApplication - Starting CursorSpringbootApplication using Java 21.0.7 with PID 11292 (C:\project\cursorSpringBoot\build\classes\java\main started by ydh10 in C:\project\cursorSpringBoot)
+2025-11-06 16:09:49.970 [main] INFO  c.s.prj.CursorSpringbootApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-06 16:09:50.655 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-06 16:09:50.706 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 5 JPA repository interfaces.
+2025-11-06 16:09:51.130 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-11-06 16:09:51.139 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-06 16:09:51.139 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-11-06 16:09:51.197 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-06 16:09:51.198 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1195 ms
+2025-11-06 16:09:51.217 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-06 16:09:51.357 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-11-06 16:09:51.360 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-06 16:09:51.368 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-11-06 16:09:51.469 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-06 16:09:51.507 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-11-06 16:09:51.533 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-06 16:09:51.702 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-06 16:09:51.740 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-06 16:09:52.472 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-06 16:09:52.542 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-06 16:09:52.902 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-06 16:09:53.093 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33a39d7e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77cd1f67, org.springframework.security.web.context.SecurityContextHolderFilter@62c02089, org.springframework.security.web.header.HeaderWriterFilter@49231d79, org.springframework.web.filter.CorsFilter@38811103, org.springframework.security.web.authentication.logout.LogoutFilter@665574fb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25ee3cd6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@732ae29c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@94f79a7, org.springframework.security.web.access.ExceptionTranslationFilter@5a86112a, org.springframework.security.web.access.intercept.AuthorizationFilter@198a653]
+2025-11-06 16:09:53.304 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-11-06 16:09:53.311 [main] INFO  c.s.prj.CursorSpringbootApplication - Started CursorSpringbootApplication in 3.791 seconds (process running for 4.065)
+2025-11-06 16:09:53.520 [main] INFO  c.softone.prj.config.DataInitializer - 샘플 데이터 초기화를 시작합니다...
+2025-11-06 16:09:53.550 [main] INFO  c.softone.prj.config.DataInitializer - 6개의 역할이 생성되었습니다.
+2025-11-06 16:09:53.554 [main] INFO  c.softone.prj.config.DataInitializer - 12명의 사용자가 생성되었습니다.
+2025-11-06 16:09:53.580 [main] INFO  c.softone.prj.config.DataInitializer - 7개의 메뉴가 생성되었습니다.
+2025-11-06 16:09:53.588 [main] INFO  c.softone.prj.config.DataInitializer - 13개의 게시글이 생성되었습니다.
+2025-11-06 16:09:53.590 [main] INFO  c.softone.prj.config.DataInitializer - 8개의 활동 로그가 생성되었습니다.
+2025-11-06 16:09:53.590 [main] INFO  c.softone.prj.config.DataInitializer - 샘플 데이터 초기화가 완료되었습니다.
+2025-11-06 16:21:00.360 [main] INFO  c.s.prj.CursorSpringbootApplication - Starting CursorSpringbootApplication using Java 21.0.7 with PID 30096 (C:\project\cursorSpringBoot\build\classes\java\main started by ydh10 in C:\project\cursorSpringBoot)
+2025-11-06 16:21:00.361 [main] DEBUG c.s.prj.CursorSpringbootApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-11-06 16:21:00.362 [main] INFO  c.s.prj.CursorSpringbootApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-06 16:21:00.927 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-06 16:21:00.969 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 5 JPA repository interfaces.
+2025-11-06 16:21:01.388 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-11-06 16:21:01.401 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-06 16:21:01.402 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-11-06 16:21:01.457 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-06 16:21:01.457 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1069 ms
+2025-11-06 16:21:01.478 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-11-06 16:21:01.618 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-11-06 16:21:01.620 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-11-06 16:21:01.627 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-11-06 16:21:01.725 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-06 16:21:01.761 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-11-06 16:21:01.787 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-11-06 16:21:01.953 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-06 16:21:01.988 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-06 16:21:02.726 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-06 16:21:02.783 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-06 16:21:03.314 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-06 16:21:03.500 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2f318251, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@219c10c2, org.springframework.security.web.context.SecurityContextHolderFilter@1872a7fe, org.springframework.security.web.header.HeaderWriterFilter@79122f5f, org.springframework.web.filter.CorsFilter@2a5abd3c, org.springframework.security.web.authentication.logout.LogoutFilter@13e12ab6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@628f642d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@355da59c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e352e3a, org.springframework.security.web.access.ExceptionTranslationFilter@535b016, org.springframework.security.web.access.intercept.AuthorizationFilter@7413c41]
+2025-11-06 16:21:03.741 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-11-06 16:21:03.748 [main] INFO  c.s.prj.CursorSpringbootApplication - Started CursorSpringbootApplication in 3.782 seconds (process running for 4.061)
+2025-11-06 16:21:03.958 [main] INFO  c.softone.prj.config.DataInitializer - 샘플 데이터 초기화를 시작합니다...
+2025-11-06 16:21:03.989 [main] INFO  c.softone.prj.config.DataInitializer - 6개의 역할이 생성되었습니다.
+2025-11-06 16:21:03.999 [main] INFO  c.softone.prj.config.DataInitializer - 12명의 사용자가 생성되었습니다.
+2025-11-06 16:21:04.041 [main] INFO  c.softone.prj.config.DataInitializer - 7개의 메뉴가 생성되었습니다.
+2025-11-06 16:21:04.051 [main] INFO  c.softone.prj.config.DataInitializer - 13개의 게시글이 생성되었습니다.
+2025-11-06 16:21:04.054 [main] INFO  c.softone.prj.config.DataInitializer - 8개의 활동 로그가 생성되었습니다.
+2025-11-06 16:21:04.054 [main] INFO  c.softone.prj.config.DataInitializer - 샘플 데이터 초기화가 완료되었습니다.
+2025-11-06 16:41:17.064 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m45s82ms724µs500ns).

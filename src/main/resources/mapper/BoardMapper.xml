@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.softone.prj.mapper.BoardMapper">
+
+    <!-- ResultMap 정의 -->
+    <resultMap id="BoardDtoResultMap" type="com.softone.prj.dto.BoardDto">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="author" column="author"/>
+        <result property="authorEmail" column="author_email"/>
+        <result property="views" column="views"/>
+        <result property="category" column="category"/>
+        <result property="status" column="status"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+    <!-- 게시글 목록 조회 (페이징) -->
+    <select id="selectBoardsWithPaging" parameterType="PageRequest" resultMap="BoardDtoResultMap">
+        SELECT 
+            id, title, content, author, author_email,
+            views, category, status, created_at, updated_at
+        FROM board
+        ORDER BY 
+            <choose>
+                <when test="sortBy != null and sortBy == 'views'">
+                    views ${sortDirection}
+                </when>
+                <when test="sortBy != null and sortBy == 'title'">
+                    title ${sortDirection}
+                </when>
+                <when test="sortBy != null and sortBy == 'updatedAt'">
+                    updated_at ${sortDirection}
+                </when>
+                <otherwise>
+                    created_at ${sortDirection}
+                </otherwise>
+            </choose>
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+
+    <!-- 게시글 전체 개수 조회 -->
+    <select id="countBoards" resultType="long">
+        SELECT COUNT(*) FROM board
+    </select>
+
+    <!-- 카테고리별 게시글 목록 조회 (페이징) -->
+    <select id="selectBoardsByCategoryWithPaging" resultMap="BoardDtoResultMap">
+        SELECT 
+            id, title, content, author, author_email,
+            views, category, status, created_at, updated_at
+        FROM board
+        WHERE category = #{category}
+        ORDER BY 
+            <choose>
+                <when test="pageRequest.sortBy != null and pageRequest.sortBy == 'views'">
+                    views ${pageRequest.sortDirection}
+                </when>
+                <when test="pageRequest.sortBy != null and pageRequest.sortBy == 'title'">
+                    title ${pageRequest.sortDirection}
+                </when>
+                <when test="pageRequest.sortBy != null and pageRequest.sortBy == 'updatedAt'">
+                    updated_at ${pageRequest.sortDirection}
+                </when>
+                <otherwise>
+                    created_at ${pageRequest.sortDirection}
+                </otherwise>
+            </choose>
+        LIMIT #{pageRequest.limit} OFFSET #{pageRequest.offset}
+    </select>
+
+    <!-- 카테고리별 게시글 개수 조회 -->
+    <select id="countBoardsByCategory" parameterType="string" resultType="long">
+        SELECT COUNT(*) 
+        FROM board
+        WHERE category = #{category}
+    </select>
+
+    <!-- 검색어로 게시글 목록 조회 (페이징) -->
+    <select id="searchBoardsWithPaging" resultMap="BoardDtoResultMap">
+        SELECT 
+            id, title, content, author, author_email,
+            views, category, status, created_at, updated_at
+        FROM board
+        WHERE 
+            title LIKE CONCAT('%', #{keyword}, '%')
+            OR content LIKE CONCAT('%', #{keyword}, '%')
+            OR author LIKE CONCAT('%', #{keyword}, '%')
+        ORDER BY 
+            <choose>
+                <when test="pageRequest.sortBy != null and pageRequest.sortBy == 'views'">
+                    views ${pageRequest.sortDirection}
+                </when>
+                <when test="pageRequest.sortBy != null and pageRequest.sortBy == 'title'">
+                    title ${pageRequest.sortDirection}
+                </when>
+                <when test="pageRequest.sortBy != null and pageRequest.sortBy == 'updatedAt'">
+                    updated_at ${pageRequest.sortDirection}
+                </when>
+                <otherwise>
+                    created_at ${pageRequest.sortDirection}
+                </otherwise>
+            </choose>
+        LIMIT #{pageRequest.limit} OFFSET #{pageRequest.offset}
+    </select>
+
+    <!-- 검색어로 게시글 개수 조회 -->
+    <select id="countSearchBoards" parameterType="string" resultType="long">
+        SELECT COUNT(*)
+        FROM board
+        WHERE 
+            title LIKE CONCAT('%', #{keyword}, '%')
+            OR content LIKE CONCAT('%', #{keyword}, '%')
+            OR author LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+
+    <!-- ========== 성능 최적화 쿼리 ========== -->
+
+    <!-- 커서 기반 페이징 (COUNT 쿼리 불필요) -->
+    <select id="selectBoardsWithCursor" parameterType="CursorPageRequest" resultMap="BoardDtoResultMap">
+        SELECT 
+            id, title, content, author, author_email,
+            views, category, status, created_at, updated_at
+        FROM board
+        <where>
+            <!-- 커서가 있으면 해당 ID 이후의 데이터만 조회 -->
+            <if test="cursor != null">
+                <choose>
+                    <when test="sortDirection == 'DESC'">
+                        AND id &lt; #{cursor}
+                    </when>
+                    <otherwise>
+                        AND id &gt; #{cursor}
+                    </otherwise>
+                </choose>
+            </if>
+        </where>
+        ORDER BY 
+            <choose>
+                <when test="sortBy != null and sortBy == 'views'">
+                    views ${sortDirection}, id ${sortDirection}
+                </when>
+                <when test="sortBy != null and sortBy == 'title'">
+                    title ${sortDirection}, id ${sortDirection}
+                </when>
+                <when test="sortBy != null and sortBy == 'updatedAt'">
+                    updated_at ${sortDirection}, id ${sortDirection}
+                </when>
+                <otherwise>
+                    created_at ${sortDirection}, id ${sortDirection}
+                </otherwise>
+            </choose>
+        <!-- size+1개를 조회하여 다음 페이지 존재 여부 판단 -->
+        LIMIT #{size} + 1
+    </select>
+
+    <!-- 최적화된 페이징 (선택적 COUNT) -->
+    <select id="selectBoardsOptimized" parameterType="OptimizedPageRequest" resultMap="BoardDtoResultMap">
+        SELECT 
+            id, title, content, author, author_email,
+            views, category, status, created_at, updated_at
+        FROM board
+        ORDER BY 
+            <choose>
+                <when test="sortBy != null and sortBy == 'views'">
+                    views ${sortDirection}
+                </when>
+                <when test="sortBy != null and sortBy == 'title'">
+                    title ${sortDirection}
+                </when>
+                <when test="sortBy != null and sortBy == 'updatedAt'">
+                    updated_at ${sortDirection}
+                </when>
+                <otherwise>
+                    created_at ${sortDirection}
+                </otherwise>
+            </choose>
+        <!-- needTotalCount가 false면 size+1개 조회 -->
+        <choose>
+            <when test="needTotalCount == false">
+                LIMIT #{limit} + 1 OFFSET #{offset}
+            </when>
+            <otherwise>
+                LIMIT #{limit} OFFSET #{offset}
+            </otherwise>
+        </choose>
+    </select>
+
+</mapper>
+
+
